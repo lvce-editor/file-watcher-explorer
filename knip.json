@@ -1,0 +1,21 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "workspaces": {
+    ".": {
+      "project": ["*.js"]
+    },
+    "packages/build": {
+      "entry": ["src/build.ts", "src/computeNodeModulesCacheKey.ts"],
+      "ignoreDependencies": ["esbuild"],
+      "project": ["src/**/*.ts"]
+    },
+    "packages/file-watcher-explorer": {
+      "entry": ["src/fileWatcherExplorerMain.ts", "test/**/*.test.ts"],
+      "project": ["src/**/*.ts", "test/**/*.ts"]
+    },
+    "packages/file-watcher-view": {
+      "entry": ["src/fileWatcherViewMain.ts", "test/**/*.test.ts"],
+      "project": ["src/**/*.ts", "test/**/*.ts"]
+    }
+  }
+}
