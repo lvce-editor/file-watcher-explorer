@@ -1,0 +1,59 @@
+{
+  "name": "@lvce-editor/file-watcher-view",
+  "version": "0.0.0-dev",
+  "description": "File Watcher Explorer view worker",
+  "main": "src/fileWatcherViewMain.ts",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js --detectOpenHandles --forceExit"
+  },
+  "keywords": [
+    "Lvce Editor",
+    "inotify",
+    "file watchers"
+  ],
+  "author": "Lvce Editor",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lvce-editor/file-watcher-explorer.git"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.4.1",
+    "@lvce-editor/constants": "^5.19.0",
+    "@lvce-editor/rpc": "^6.10.0",
+    "@lvce-editor/rpc-registry": "^9.55.0",
+    "@lvce-editor/viewlet-registry": "^5.2.1",
+    "@lvce-editor/virtual-dom-worker": "^11.5.0",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.11"
+  },
+  "jest": {
+    "injectGlobals": false,
+    "extensionsToTreatAsEsm": [
+      ".ts"
+    ],
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    },
+    "transform": {
+      "^.+\\.tsx?$": [
+        "ts-jest",
+        {
+          "useESM": true
+        }
+      ]
+    },
+    "testMatch": [
+      "**/*.test.ts"
+    ],
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0
+      }
+    }
+  }
+}

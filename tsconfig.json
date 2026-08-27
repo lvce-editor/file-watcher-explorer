@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "./packages/build" },
+    { "path": "./packages/file-watcher-explorer" },
+    { "path": "./packages/file-watcher-view" }
+  ]
+}

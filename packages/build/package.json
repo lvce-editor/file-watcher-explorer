@@ -1,0 +1,24 @@
+{
+  "name": "build",
+  "version": "0.0.0-dev",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build:watch": "esbuild --format=esm --bundle --external:node:buffer --external:electron --external:node:worker_threads --watch ../file-watcher-view/src/fileWatcherViewMain.ts --outfile=../../.tmp/dist-file-watcher-view/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.28.5",
+    "@lvce-editor/verror": "^1.7.0",
+    "@rollup/plugin-babel": "^7.1.0",
+    "@rollup/plugin-commonjs": "^29.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@types/node": "^25.0.8",
+    "esbuild": "^0.28.1",
+    "execa": "^9.6.1",
+    "rollup": "^4.55.1"
+  }
+}
