@@ -49,6 +49,16 @@ const summaryNode: VirtualDomNode = {
   type: VirtualDomElements.Div,
 }
 
+const fileWatcherExplorerNameCellClassName = mergeClassNames(
+  'FileWatcherExplorerCell',
+  'FileWatcherExplorerNameCell',
+)
+
+const fileWatcherExplorerWatcherCountCellClassName = mergeClassNames(
+  'FileWatcherExplorerCell',
+  'FileWatcherExplorerWatcherCountCell',
+)
+
 const cell = (className: string, value: string): readonly VirtualDomNode[] => [
   {
     childCount: 1,
@@ -96,19 +106,10 @@ const getTableDom = (
         title: processInfo.command,
         type: VirtualDomElements.Tr,
       },
-      ...cell(
-        mergeClassNames(
-          'FileWatcherExplorerCell',
-          'FileWatcherExplorerNameCell',
-        ),
-        processInfo.name,
-      ),
+      ...cell(fileWatcherExplorerNameCellClassName, processInfo.name),
       ...cell('FileWatcherExplorerCell', String(processInfo.pid)),
       ...cell(
-        mergeClassNames(
-          'FileWatcherExplorerCell',
-          'FileWatcherExplorerWatcherCountCell',
-        ),
+        fileWatcherExplorerWatcherCountCellClassName,
         String(processInfo.watcherCount),
       ),
     ]),
